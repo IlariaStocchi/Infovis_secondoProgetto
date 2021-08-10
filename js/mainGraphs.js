@@ -3,15 +3,34 @@ const margin = {top: 200, right: 20, bottom: 20, left: 450},   //10 30 30 60
     height = 600 - margin.top - margin.bottom; //400
 
 // append the svg object to the body of the page
-const svg = d3.select("#my_dataviz")
-  .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-  .attr("transform", `translate(${margin.left},${margin.top})`);
 
+// var svg = d3.select("#my_dataviz")
+//     .append("svg")
+//     .attr("width", width + margin.left + margin.right)
+//     .attr("height", height + margin.top + margin.bottom)
+//     .append("g")
+//     .attr("transform", `translate(${margin.left},${margin.top})`);
+
+function removeSVG(){
+    var v1 = document.getElementsByTagName('svg');
+    if(v1.length >= 0 ){
+        d3.select("svg").remove();
+    }
+}
+
+function createSVG(){
+    var svg = d3.select("#my_dataviz")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+    return svg;
+}
 //Build humidity graph
 function humidityGraph(){
+    
+    var svg = createSVG();
     
     d3.csv("data/CSV/07/2020-07-humidity-average.csv",
            function(d){
@@ -44,11 +63,16 @@ function humidityGraph(){
             )
             
         })
+    removeSVG();
 }
 
 
 //Build temperature graph
 function temperatureGraph() {
+    
+    removeSVG();
+    
+    var svg = createSVG();
     
     d3.csv("data/CSV/07/2020-07-temperature-average.csv",
            function(d){
@@ -89,6 +113,10 @@ function temperatureGraph() {
 
 //Build wind graph
 function windGraph(){
+    
+    removeSVG();
+    
+    var svg = createSVG();
     
     d3.csv("data/CSV/07/2020-07-wind-speed-average.csv",
            function(d){
