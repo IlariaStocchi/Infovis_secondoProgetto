@@ -65,19 +65,22 @@
 <p class="p1">Welcome to the Pantheon project data visualization system</p>
 <div id="my_dataviz"></div>
 
-<script src="js/graphGenerator.js"></script>
+<script src="js/humidityGraphGenerator.js"></script>
+<script src="js/temperatureGraphGenerator.js"></script>
+<script src="js/windGraphGenerator.js"></script>
+<script src="js/atmosphereGraphGenerator.js"></script>
 
 <div style="position: absolute; bottom: 600px; left: 300px;"> 
-    <input type="image" src="./images/humidity.png" width="50" height="50" onClick="humidityAugust()"/>
+    <input type="image" src="./images/humidity.png" width="50" height="50" onClick=""/>
 </div>
 <div style="position: absolute; bottom: 500px; left: 300px;"> 
-    <input type="image" src="./images/temp.png" width="50" height="50" onClick="temperatureDecember()"/>
+    <input type="image" src="./images/temp.png" width="50" height="50" onClick=""/>
 </div>
 <div style="position: absolute; bottom: 400px; left: 300px;"> 
-    <input type="image" src="./images/wind.png" width="50" height="50" onClick="windSpeedDecember()"/>
+    <input type="image" src="./images/wind.png" width="50" height="50" onClick=""/>
 </div>
 <div style="position: absolute; bottom: 300px; left: 300px;"> 
-    <input type="image" src="./images/soil.png" width="50" height="50" onClick="soilTemperatureJuly()"/>
+    <input type="image" src="./images/soil.png" width="50" height="50" onClick=""/>
 </div>
 <div style="position: absolute; bottom: 200px; left: 300px;"> 
     <input type="image" src="./images/atmosphere.jpg" width="50" height="50" onClick=""/>
@@ -87,7 +90,7 @@
     <input type="image" src="./images/sun.png" width="60" height="60" onClick=""/>
 </div>
 <div style="position: absolute; top: 430px; right: 300px;"> 
-    <input type="image" src="./images/umbrella.png" width="50" height="50" onClick=""/>
+    <input type="image" src="./images/umbrella.png" width="50" height="50" onClick="new atmosphereGraphGenerator('solarDecember').solarGraph()"/>
 </div>
 <div style="position: absolute; top: 500px; right: 290px;"> 
     <input type="image" src="./images/snow.jpg" width="60" height="60" onClick=""/>
