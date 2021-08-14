@@ -56,46 +56,159 @@
         font-size: 40px;
         color: Indigo;
     }
-    
-
-    
- 
 </style>
+
 <script src="https://d3js.org/d3.v6.js"></script>
 <p class="p1">Welcome to the Pantheon project data visualization system</p>
 <div id="my_dataviz"></div>
 
-<script src="js/humidityGraphGenerator.js"></script>
-<script src="js/temperatureGraphGenerator.js"></script>
-<script src="js/windGraphGenerator.js"></script>
-<script src="js/atmosphereGraphGenerator.js"></script>
+<!--  LOAD SCRIPTS -->
+<script src="js/humidity.js"></script>
+<script src="js/temperature.js"></script>
+<script src="js/wind.js"></script>
+<script src="js/soil.js"></script>
+<script src="js/atmosphere.js"></script>
 
-<div style="position: absolute; bottom: 600px; left: 300px;"> 
-    <input type="image" src="./images/humidity.png" width="50" height="50" onClick=""/>
+<!--<div style="position: absolute; bottom: 670px; left: 295px;"> 
+    <input type="image" src="./images/sun.png" width="60" height="60" />
 </div>
+<form style="position: absolute; top: 185px; left: 140px;">
+  <select id="solar" onchange="getOptionSolar()">   
+    <option selected disabled>Month</option>
+    <option value="july">July</option>
+    <option value="august">August</option>
+    <option value="september">September</option>
+    <option value="october">October</option>
+    <option value="november">November</option>
+    <option value="december">December</option>
+  </select>
+</form>-->
+
+<!-- HUMIDITY -->
+<div style="position: absolute; bottom: 600px; left: 300px;"> 
+    <input type="image" src="./images/humidity.png" width="50" height="50" />
+</div>
+<form style="position: absolute; top: 260px; left: 140px;">
+  <select id="humidity" onchange="buildHumidityGraph()">   
+    <option selected disabled>Month</option>
+    <option value="july">July</option>
+    <option value="august">August</option>
+    <option value="september">September</option>
+    <option value="october">October</option>
+    <option value="november">November</option>
+    <option value="december">December</option>
+  </select>
+</form>
+
+<!-- TEMPERATURE -->
 <div style="position: absolute; bottom: 500px; left: 300px;"> 
     <input type="image" src="./images/temp.png" width="50" height="50" onClick=""/>
 </div>
+<form style="position: absolute; top: 355px; left: 140px;">
+  <select id="temperature" onchange="buildTemperatureGraph()">   
+    <option selected disabled>Month</option>
+    <option value="july">July</option>
+    <option value="august">August</option>
+    <option value="september">September</option>
+    <option value="october">October</option>
+    <option value="november">November</option>
+    <option value="december">December</option>
+  </select>
+</form>
+
+<!-- WIND -->
 <div style="position: absolute; bottom: 400px; left: 300px;"> 
     <input type="image" src="./images/wind.png" width="50" height="50" onClick=""/>
 </div>
+<form style="position: absolute; top: 460px; left: 35px;">
+  <select id="windSensor" onchange="getWindSensor()">   
+    <option selected disabled>Sensor</option>
+    <option value="speedSensor">Speed</option>
+    <option value="dirSensor">Direction</option>
+  </select>
+</form>
+<form style="position: absolute; top: 460px; left: 140px;">
+  <select id="windMonth" onchange="buildWindGraph()">   
+    <option selected disabled>Month</option>
+    <option value="july">July</option>
+    <option value="august">August</option>
+    <option value="september">September</option>
+    <option value="october">October</option>
+    <option value="november">November</option>
+    <option value="december">December</option>
+  </select>
+</form>
+
+<!-- SOIL -->
 <div style="position: absolute; bottom: 300px; left: 300px;"> 
     <input type="image" src="./images/soil.png" width="50" height="50" onClick=""/>
 </div>
+<form style="position: absolute; top: 575px; left: 19px;">
+  <select id="soilSensor" onchange="getSoilSensor()">   
+    <option selected disabled>Sensor</option>
+    <option value="temperatureSensor">Temperature</option>
+    <option value="waterSensor">Water</option>
+  </select>
+</form>
+<form style="position: absolute; top: 545px; left: 63px;">
+  <select id="area" onchange="getArea()">   
+    <option selected disabled>Field</option>
+    <option value="f1">Area1</option>
+    <option value="f2">Area2</option>
+    <option value="f3">Area3</option>
+    <option value="f4">Area4</option>
+    <option value="f5">Area5</option>
+    <option value="f6">Area6</option>
+    <option value="f7">Area7</option>
+    <option value="f8">Area8</option>
+    <option value="f9">Area9</option>
+  </select>
+</form>
+<form style="position: absolute; top: 558px; left: 140px;">
+  <select id="soilMonth" onchange="buildSoilGraph()">   
+    <option selected disabled>Month</option>
+    <option value="july">July</option>
+    <option value="august">August</option>
+    <option value="september">September</option>
+    <option value="october">October</option>
+    <option value="november">November</option>
+    <option value="december">December</option>
+  </select>
+</form>
+
+<!-- ATMOSPHERE -->
 <div style="position: absolute; bottom: 200px; left: 300px;"> 
     <input type="image" src="./images/atmosphere.jpg" width="50" height="50" onClick=""/>
 </div>
+<form style="position: absolute; top: 660px; left: 35px;">
+  <select id="atmosphereSensor" onchange="getAtmosphereSensor()">   
+    <option selected disabled>Sensor</option>
+    <option value="solarSensor">Solar</option>
+    <option value="rainSensor">Rain</option>
+    <option value="pressureSensor">Pressure</option>
+  </select>
+</form>
+<form style="position: absolute; top: 660px; left: 140px;">
+  <select id="atmosphereMonth" onchange="buildAtmosphereGraph()">   
+    <option selected disabled>Month</option>
+    <option value="july">July</option>
+    <option value="august">August</option>
+    <option value="september">September</option>
+    <option value="october">October</option>
+    <option value="november">November</option>
+    <option value="december">December</option>
+  </select>
+</form>
 
-<div style="position: absolute; top: 350px; right: 300px;"> 
+<!--<div style="position: absolute; top: 350px; right: 300px;"> 
     <input type="image" src="./images/sun.png" width="60" height="60" onClick=""/>
-</div>
-<div style="position: absolute; top: 430px; right: 300px;"> 
-    <input type="image" src="./images/umbrella.png" width="50" height="50" onClick="new atmosphereGraphGenerator('solarDecember').solarGraph()"/>
-</div>
-<div style="position: absolute; top: 500px; right: 290px;"> 
+</div>-->
+<!--<div style="position: absolute; top: 430px; right: 300px;"> 
+    <input type="image" src="./images/umbrella.png" width="50" height="50" onClick=""/>
+</div>-->
+<!--<div style="position: absolute; top: 500px; right: 290px;"> 
     <input type="image" src="./images/snow.jpg" width="60" height="60" onClick=""/>
-</div>
-
+</div>-->
 </html>
 
 
