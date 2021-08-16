@@ -38,7 +38,7 @@ function humidityGraph(month) {
     .then(function(data) {
         const x = d3.scaleTime()
             .domain(d3.extent(data, function(d) { return d.date; }))
-            .range([ 0, width ]);  //500
+            .range([ 0, width ]); 
                     
         xAxis = svg.append("g")
             .attr("transform", `translate(0, 200)`)
@@ -50,17 +50,30 @@ function humidityGraph(month) {
                     
         yAxis = svg.append("g")
             .call(d3.axisLeft(y));
+            
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("% humidity average")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
-            .attr("width", width)   //width
-            .attr("height", height)  //height  quanto vedo di grafico all'inizio
+            .attr("width", width)   
+            .attr("height", height)  
             .attr("x", 0)
             .attr("y", 0);
         
         const brush = d3.brushX() 
-            .extent([[0,0], [width, height]])  //width, height   area selezione
+            .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
         const line = svg.append("g")
@@ -132,7 +145,7 @@ function buildHumidityGraph() {
             break;
         
         case "october":
-            humidityOctober("10");
+            humidityGraph("10");
             break;
         
         case "november":
@@ -140,7 +153,7 @@ function buildHumidityGraph() {
             break;
         
         case "november":
-            humidityDecember("12");
+            humidityGraph("12");
             break;
     }
 }
