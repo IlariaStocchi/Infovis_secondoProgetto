@@ -27,17 +27,21 @@ function createSVG(){
 } 
 
 
-function solarJuly() {
+function solarGraph(month) {
     
     var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-solar.csv";
+    var file = path.concat(month).concat(sensor);
                 
-    d3.csv("data/CSV/07/2020-07-solar.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
         const x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
+        .range([ 0, width ]);
                     
-        svg.append("g")
+        xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
@@ -45,32 +49,100 @@ function solarJuly() {
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        svg.append("g")
+        yAxis = svg.append("g")
         .call(d3.axisLeft(y));
                    
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Solar Radiation (V)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "seagreen")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
     })    
 }
 
-function solarAugust() {
+
+function pressureGraph(month) {
     
     var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-pressure.csv";
+    var file = path.concat(month).concat(sensor);
                 
-    d3.csv("data/CSV/08/2020-08-solar.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
         const x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
+        .range([ 0, width ]);
                     
-        svg.append("g")
+        xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
@@ -78,32 +150,100 @@ function solarAugust() {
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        svg.append("g")
+        yAxis = svg.append("g")
         .call(d3.axisLeft(y));
                    
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Pressure (bit)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "peru")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
     })    
 }
 
-function solarSeptember() {
+
+function rainGraph(month) {
     
     var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-rain.csv";
+    var file = path.concat(month).concat(sensor);
                 
-    d3.csv("data/CSV/09/2020-09-solar.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
         const x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
+        .range([ 0, width ]);
                     
-        svg.append("g")
+        xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
@@ -111,516 +251,84 @@ function solarSeptember() {
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        svg.append("g")
+        yAxis = svg.append("g")
         .call(d3.axisLeft(y));
                    
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Rain (mm)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "lightskyblue")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
     })    
 }
 
-function solarOctober() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-solar.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function solarNovember() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-solar.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function solarDecember() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-solar.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-
-function pressureJuly() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-pressure.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function pressureAugust() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-pressure.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function pressureSeptember() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-pressure.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function pressureOctober() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-pressure.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function pressureNovember() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-pressure.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function pressureDecember() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-pressure.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function rainJuly() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-rain.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function rainAugust() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-rain.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function rainSeptember() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-rain.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function rainOctober() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-rain.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function rainNovember() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-rain.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function rainDecember() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-rain.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
 
 function getAtmosphereSensor() {
         
@@ -653,27 +361,27 @@ function buildAtmosphereGraph() {
     if (sensor === "solar") {
         switch(month){
             case "july":
-                solarJuly();
+                solarGraph("07");
                 break;
             
             case "august":
-                solarAugust();
+                solarGraph("08");
                 break;
             
             case "september":
-                solarSeptember();
+                solarGraph("09");
                 break;
         
             case "october":
-                solarOctober();
+                solarGraph("10");
                 break;
         
             case "november":
-                solarNovember();
+                solarGraph("11");
                 break;
             
             case "december":
-                solarDecember();
+                solarGraph("12");
                 break;
         }
     }
@@ -681,27 +389,27 @@ function buildAtmosphereGraph() {
     if (sensor === "rain") {
         switch(month){
             case "july":
-                rainJuly();
+                rainGraph("07");
                 break;
             
             case "august":
-                rainAugust();
+                rainGraph("08");
                 break;
             
             case "september":
-                rainSeptember();
+                rainGraph("09");
                 break;
         
             case "october":
-                rainOctober();
+                rainGraph("10");
                 break;
         
             case "november":
-                rainNovember();
+                rainGraph("11");
                 break;
                 
             case "december":
-                rainDecember();
+                rainGraph("12");
                 break;
         }
     }
@@ -709,27 +417,27 @@ function buildAtmosphereGraph() {
     if (sensor === "pressure") {
         switch(month){
             case "july":
-                pressureJuly();
+                pressureGraph("07");
                 break;
             
             case "august":
-                pressureAugust();
+                pressureGraph("08");
                 break;
             
             case "september":
-                pressureSeptember();
+                pressureGraph("09");
                 break;
         
             case "october":
-                pressureOctober();
+                pressureGraph("10");
                 break;
         
             case "november":
-                pressureNovember();
+                pressureGraph("11");
                 break;
             
             case "december":
-                pressureDecember();
+                pressureGraph("12");
                 break;
         }
     }
