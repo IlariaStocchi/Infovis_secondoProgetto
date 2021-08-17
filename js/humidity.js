@@ -51,6 +51,21 @@ function humidityGraph(month) {
         yAxis = svg.append("g")
             .call(d3.axisLeft(y));
             
+        
+        var key = ["Humidity average"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "steelblue")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+    
         svg.append("text")
             .attr("text-anchor", "end")
             .attr("x", 1100)

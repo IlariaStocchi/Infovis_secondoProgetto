@@ -50,6 +50,20 @@ function temperatureGraph(month) {
                     
         yAxis = svg.append("g")
         .call(d3.axisLeft(y));
+        
+        var key = ["Temperature average"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "salmon")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
                    
         svg.append("text")
             .attr("text-anchor", "end")

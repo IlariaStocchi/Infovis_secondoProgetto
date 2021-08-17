@@ -51,6 +51,20 @@ function solarGraph(month) {
                     
         yAxis = svg.append("g")
         .call(d3.axisLeft(y));
+        
+        var key = ["Solar radiation"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "seagreen")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
                    
         svg.append("text")
             .attr("text-anchor", "end")
@@ -152,6 +166,20 @@ function pressureGraph(month) {
                     
         yAxis = svg.append("g")
         .call(d3.axisLeft(y));
+        
+        var key = ["Air pressure"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "peru")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
                    
         svg.append("text")
             .attr("text-anchor", "end")
@@ -253,6 +281,20 @@ function rainGraph(month) {
                     
         yAxis = svg.append("g")
         .call(d3.axisLeft(y));
+        
+        var key = ["Rain"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "lightskyblue")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
                    
         svg.append("text")
             .attr("text-anchor", "end")

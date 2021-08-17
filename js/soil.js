@@ -27,3573 +27,2066 @@ function createSVG(){
 } 
 
 
-function soilWaterTN01July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-water-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN02July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-water-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN03July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-water-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN04July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-water-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN05July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-water-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN06July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-water-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN07July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-water-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN08July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-water-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN09July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-water-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-
-function soilWaterTN01August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-water-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN02August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-water-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN03August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-water-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN04August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-water-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN05August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-water-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN06August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-water-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN07August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-water-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN08August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-water-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN09August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-water-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN01September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-water-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN02September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-water-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN03September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-water-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN04September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-water-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN05September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-water-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN06September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-water-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN07September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-water-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN08September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-water-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN09September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-water-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-
-function soilWaterTN01October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-water-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN02October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-water-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN03October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-water-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN04October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-water-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN05October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-water-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN06October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-water-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN07October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-water-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN08October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-water-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN09October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-water-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN01November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-water-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN02November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-water-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN03November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-water-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN04November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-water-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN05November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-water-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN06November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-water-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN07November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-water-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN08November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-water-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN09November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-water-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN01December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-water-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN02December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-water-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN03December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-water-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN04December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-water-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN05December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-water-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN06December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-water-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN07December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-water-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN08December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-water-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilWaterTN09December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-water-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN01July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-temperature-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN02July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-temperature-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN03July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-temperature-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN04July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-temperature-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN05July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-temperature-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN06July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-temperature-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN07July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-temperature-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN08July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-temperature-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN09July() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/07/2020-07-soil-temperature-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-
-function soilTemperatureTN01August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-temperature-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN02August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-temperature-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN03August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-temperature-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN04August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-temperature-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN05August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-temperature-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN06August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-temperature-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN07August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-temperature-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN08August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-temperature-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN09August() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/08/2020-08-soil-temperature-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN01September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-temperature-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN02September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-temperature-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN03September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-temperature-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN04September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-temperature-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN05September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-temperature-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN06September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-temperature-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soiTemperatureTN07September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-temperature-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN08September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-temperature-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN09September() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/09/2020-09-soil-temperature-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-
-function soilTemperatureTN01October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-temperature-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soiTemperatureTN02October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-temperature-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN03October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-temperature-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN04October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-temperature-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN05October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-temperature-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN06October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-temperature-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN07October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-temperature-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN08October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-temperature-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN09October() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/10/2020-10-soil-temperature-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN01November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-temperature-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN02November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-temperature-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN03November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-temperature-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN04November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-temperature-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN05November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-temperature-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN06November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-temperature-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN07November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-temperature-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN08November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-temperature-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN09November() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/11/2020-11-soil-temperature-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN01December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-temperature-tn01.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN02December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-temperature-tn02.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN03December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-temperature-tn03.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN04December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-temperature-tn04.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN05December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-temperature-tn05.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
-
-function soilTemperatureTN06December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-temperature-tn06.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
+function soilWaterTN01(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-water-tn01.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Water Area 1"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "brown")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+                   
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil water (m3)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "brown")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilWaterTN02(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-water-tn02.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Water Area 2"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "brown")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil water (m3)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "brown")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+                   
+
+    })    
+}
+
+function soilWaterTN03(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-water-tn03.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Water Area 3"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "brown")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil water (m3)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "brown")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilWaterTN04(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-water-tn04.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Water Area 4"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "brown")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil water (m3)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "brown")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilWaterTN05(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-water-tn05.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Water Area 5"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "brown")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil water (m3)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "brown")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilWaterTN06(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-water-tn02.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Water Area 6"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "brown")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil water (m3)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "brown")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })
+}
+
+function soilWaterTN07(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-water-tn07.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Water Area 7"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "brown")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil water (m3)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "brown")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilWaterTN08(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-water-tn08.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Water Area 8"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "brown")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil water (m3)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "brown")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilWaterTN09(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-water-tn09.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Water Area 9"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "brown")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil water (m3)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "brown")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+
+
+function soilTemperatureTN01(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-temperature-tn01.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Temperature Area 1"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "darkorange")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+                   
+                   
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil temperature (°C)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "darkorange")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilTemperatureTN02(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-temperature-tn02.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Temperature Area 2"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "darkorange")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+                   
+                   
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil temperature (°C)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "darkorange")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })
+}
+
+function soilTemperatureTN03(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-temperature-tn03.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Temperature Area 3"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "darkorange")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+                   
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil temperature (°C)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "darkorange")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilTemperatureTN04July(mont) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-temperature-tn04.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Temperature Area 4"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "darkorange")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+                   
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil temperature (°C)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "darkorange")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });    
+    })    
+}
+
+function soilTemperatureTN05(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-temperature-tn05.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Temperature Area 5"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "darkorange")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+                   
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil temperature (°C)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "darkorange")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilTemperatureTN06(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-temperature-tn06.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Temperature Area 6"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "darkorange")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+                   
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil temperature (°C)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "darkorange")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilTemperatureTN07(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-temperature-tn07.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Temperature Area 7"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "darkorange")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+                   
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil temperature (°C)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "darkorange")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilTemperatureTN08(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-temperature-tn08.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Temperature Area 8"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "darkorange")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+                   
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil temperature (°C)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "darkorange")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
+    })    
+}
+
+function soilTemperatureTN09(month) {
+    
+    var svg = createSVG();
+    var path = "data/CSV/";
+    var month = month.concat("/2020-").concat(month);
+    var sensor = "-soil-temperature-tn09.csv";
+    var file = path.concat(month).concat(sensor);
+                
+    d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
+    .then(function(data) {
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, function(d) { return d.date; }))
+        .range([ 0, width ]);
+                    
+        xAxis = svg.append("g")
+        .attr("transform", `translate(0, 200)`)
+        .call(d3.axisBottom(x));
+                    
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .range([ (screenHeight - screenMargin2), 0 ]);
+                    
+        yAxis = svg.append("g")
+        .call(d3.axisLeft(y));
+        
+        var key = ["Soil Temperature Area 9"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "darkorange")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+            
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", 1100)
+            .attr("y", 240)
+            .text("Month");
+        
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -30)
+            .attr("x", -20)
+            .text("Soil temperature (°C)")
+        
+        const clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width)   
+            .attr("height", height)  
+            .attr("x", 0)
+            .attr("y", 0);
+        
+        const brush = d3.brushX() 
+            .extent([[0,0], [width, height]])  
+            .on("end", updateChart)
+        
+        const line = svg.append("g")
+            .attr("clip-path", "url(#clip)")
+            
+        line.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("fill", "none")
+            .attr("stroke", "darkorange")
+            .attr("d", d3.line()
+                .x(function(d) {return x(d.date)})
+                .y(function(d) {return y(d.value)})
+             )
+        line.append("g")
+            .attr("class", "brush")
+            .call(brush)
+            
+        let idleTimeout
+        function idled() {idleTimeout = null; }
+        
+        function updateChart(event,d){
+            extent = event.selection
+            
+            if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
+                x.domain([ 4,8])
+            } else {
+                x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+                line.select(".brush").call(brush.move, null)
+            }
+            xAxis.transition().duration(1000).call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .duration(1000)
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        }
+        
+        svg.on("dblclick", function(){
+            x.domain(d3.extent(data, function(d) {return d.date; }))
+            xAxis.transition().call(d3.axisBottom(x))
+            line.select('.line')
+                .transition()
+                .attr("d", d3.line()
+                    .x(function(d) {return x(d.date) })
+                    .y(function(d) {return y(d.value) }))
+        });
     })    
 }
 
-function soilTemperatureTN07December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-temperature-tn07.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
 
-function soilTemperatureTN08December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-temperature-tn08.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
 
-function soilTemperatureTN09December() {
-    
-    var svg = createSVG();
-                
-    d3.csv("data/CSV/12/2020-12-soil-temperature-tn09.csv", function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
-    .then(function(data) {
-        const x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, 500 ]);
-                    
-        svg.append("g")
-        .attr("transform", `translate(0, 200)`)
-        .call(d3.axisBottom(x));
-                    
-        const y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
-        .range([ (screenHeight - screenMargin2), 0 ]);
-                    
-        svg.append("g")
-        .call(d3.axisLeft(y));
-                   
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-        .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(d.value) })
-        )
-    })    
-}
 
 
 
@@ -3674,27 +2167,27 @@ function buildSoilGraph() {
             case "1":
                 switch(month){
                     case "july":
-                        soilWaterTN01July();
+                        soilWaterTN01("07");
                         break;
                     
                     case "august":
-                        soilWaterTN01August();
+                        soilWaterTN01("08");
                         break;
                         
                     case "september":
-                        soilWaterTN01September();
+                        soilWaterTN01("09");
                         break;
                     
                     case "october":
-                        soilWaterTN01October();
+                        soilWaterTN01("10");
                         break;
                         
                     case "november":
-                        soilWaterTN01November();
+                        soilWaterTN01("11");
                         break;
                         
                     case "december":
-                        soilWaterTN01December();
+                        soilWaterTN01("12");
                         break;
                 }
                 break;
@@ -3702,27 +2195,27 @@ function buildSoilGraph() {
             case "2":
                 switch(month){
                     case "july":
-                        soilWaterTN02July();
+                        soilWaterTN02("07");
                         break;
                     
                     case "august":
-                        soilWaterTN02August();
+                        soilWaterTN02("08");
                         break;
                         
                     case "september":
-                        soilWaterTN02September();
+                        soilWaterTN02("09");
                         break;
                     
                     case "october":
-                        soilWaterTN02October();
+                        soilWaterTN02("10");
                         break;
                         
                     case "november":
-                        soilWaterTN02November();
+                        soilWaterTN02("11");
                         break;
                         
                     case "december":
-                        soilWaterTN02December();
+                        soilWaterTN02("12");
                         break;
                 }
                 break;
@@ -3730,27 +2223,27 @@ function buildSoilGraph() {
             case "3":
                 switch(month){
                     case "july":
-                        soilWaterTN03July();
+                        soilWaterTN03("07");
                         break;
                     
                     case "august":
-                        soilWaterTN03August();
+                        soilWaterTN03("08");
                         break;
                         
                     case "september":
-                        soilWaterTN03September();
+                        soilWaterTN03("09");
                         break;
                     
                     case "october":
-                        soilWaterTN03October();
+                        soilWaterTN03("10");
                         break;
                         
                     case "november":
-                        soilWaterTN03November();
+                        soilWaterTN03("11");
                         break;
                         
                     case "december":
-                        soilWaterTN03December();
+                        soilWaterTN03("12");
                         break;
                 }
                 break;
@@ -3758,27 +2251,27 @@ function buildSoilGraph() {
             case "4":
                 switch(month){
                     case "july":
-                        soilWaterTN04July();
+                        soilWaterTN04("07");
                         break;
                     
                     case "august":
-                        soilWaterTN04August();
+                        soilWaterTN04("08");
                         break;
                         
                     case "september":
-                        soilWaterTN04September();
+                        soilWaterTN04("09");
                         break;
                     
                     case "october":
-                        soilWaterTN04October();
+                        soilWaterTN04("10");
                         break;
                         
                     case "november":
-                        soilWaterTN04November();
+                        soilWaterTN04("11");
                         break;
                         
                     case "december":
-                        soilWaterTN04December();
+                        soilWaterTN04("12");
                         break;
                 }
                 break;
@@ -3786,27 +2279,27 @@ function buildSoilGraph() {
             case "5":
                 switch(month){
                     case "july":
-                        soilWaterTN05July();
+                        soilWaterTN05("07");
                         break;
                     
                     case "august":
-                        soilWaterTN05August();
+                        soilWaterTN05("08");
                         break;
                         
                     case "september":
-                        soilWaterTN05September();
+                        soilWaterTN05("09");
                         break;
                     
                     case "october":
-                        soilWaterTN05October();
+                        soilWaterTN05("10");
                         break;
                         
                     case "november":
-                        soilWaterTN05November();
+                        soilWaterTN05("11");
                         break;
                         
                     case "december":
-                        soilWaterTN05December();
+                        soilWaterTN05("12");
                         break;
                 }
                 break;
@@ -3814,27 +2307,27 @@ function buildSoilGraph() {
             case "6":
                 switch(month){
                     case "july":
-                        soilWaterTN06July();
+                        soilWaterTN06("07");
                         break;
                     
                     case "august":
-                        soilWaterTN06August();
+                        soilWaterTN06("08");
                         break;
                         
                     case "september":
-                        soilWaterTN06September();
+                        soilWaterTN06("09");
                         break;
                     
                     case "october":
-                        soilWaterTN06October();
+                        soilWaterTN06("10");
                         break;
                         
                     case "november":
-                        soilWaterTN06November();
+                        soilWaterTN06("11");
                         break;
                         
                     case "december":
-                        soilWaterTN06December();
+                        soilWaterTN06("12");
                         break;
                 }
                 break;
@@ -3842,27 +2335,27 @@ function buildSoilGraph() {
             case "7":
                 switch(month){
                     case "july":
-                        soilWaterTN07July();
+                        soilWaterTN07("07");
                         break;
                     
                     case "august":
-                        soilWaterTN07August();
+                        soilWaterTN07("08");
                         break;
                         
                     case "september":
-                        soilWaterTN07September();
+                        soilWaterTN07("09");
                         break;
                     
                     case "october":
-                        soilWaterTN07October();
+                        soilWaterTN07("10");
                         break;
                         
                     case "november":
-                        soilWaterTN07November();
+                        soilWaterTN07("11");
                         break;
                         
                     case "december":
-                        soilWaterTN07December();
+                        soilWaterTN07("12");
                         break;
                 }
                 break;
@@ -3870,27 +2363,27 @@ function buildSoilGraph() {
             case "8":
                 switch(month){
                     case "july":
-                        soilWaterTN08July();
+                        soilWaterTN08("07");
                         break;
                     
                     case "august":
-                        soilWaterTN08August();
+                        soilWaterTN08("08");
                         break;
                         
                     case "september":
-                        soilWaterTN08September();
+                        soilWaterTN08("09");
                         break;
                     
                     case "october":
-                        soilWaterTN08October();
+                        soilWaterTN08("10");
                         break;
                         
                     case "november":
-                        soilWaterTN08November();
+                        soilWaterTN08("11");
                         break;
                         
                     case "december":
-                        soilWaterTN08December();
+                        soilWaterTN08("12");
                         break;
                 }
                 break;
@@ -3898,27 +2391,27 @@ function buildSoilGraph() {
             case "9":
                 switch(month){
                     case "july":
-                        soilWaterTN09July();
+                        soilWaterTN09("07");
                         break;
                     
                     case "august":
-                        soilWaterTN09August();
+                        soilWaterTN09("08");
                         break;
                         
                     case "september":
-                        soilWaterTN09September();
+                        soilWaterTN09("09");
                         break;
                     
                     case "october":
-                        soilWaterTN09October();
+                        soilWaterTN09("10");
                         break;
                         
                     case "november":
-                        soilWaterTN09November();
+                        soilWaterTN09("11");
                         break;
                         
                     case "december":
-                        soilWaterTN09December();
+                        soilWaterTN09("12");
                         break;
                 }
                 break;
@@ -3930,27 +2423,27 @@ function buildSoilGraph() {
             case "1":
                 switch(month){
                     case "july":
-                        soilTemperatureTN01July();
+                        soilTemperatureTN01("07");
                         break;
                     
                     case "august":
-                        soilTemperatureTN01August();
+                        soilTemperatureTN01("08");
                         break;
                         
                     case "september":
-                        soilTemperatureTN01September();
+                        soilTemperatureTN01("09");
                         break;
                     
                     case "october":
-                        soilTemperatureTN01October();
+                        soilTemperatureTN01("10");
                         break;
                         
                     case "november":
-                        soilTemperatureTN01November();
+                        soilTemperatureTN01("11");
                         break;
                         
                     case "december":
-                        soilTemperatureTN01December();
+                        soilTemperatureTN01("12");
                         break;
                 }
                 break;
@@ -3958,27 +2451,27 @@ function buildSoilGraph() {
             case "2":
                 switch(month){
                     case "july":
-                        soilTemperatureTN02July();
+                        soilTemperatureTN02("07");
                         break;
                     
                     case "august":
-                        soilTemperatureTN02August();
+                        soilTemperatureTN02("08");
                         break;
                         
                     case "september":
-                        soilTemperatureTN02September();
+                        soilTemperatureTN02("09");
                         break;
                     
                     case "october":
-                        soilTemperatureTN02October();
+                        soilTemperatureTN02("10");
                         break;
                         
                     case "november":
-                        soilTemperatureTN02November();
+                        soilTemperatureTN02("11");
                         break;
                         
                     case "december":
-                        soilTemperatureTN02December();
+                        soilTemperatureTN02("12");
                         break;
                 }
                 break;
@@ -3986,27 +2479,27 @@ function buildSoilGraph() {
             case "3":
                 switch(month){
                     case "july":
-                        soilTemperatureTN03July();
+                        soilTemperatureTN03("07");
                         break;
                     
                     case "august":
-                        soilTemperatureTN03August();
+                        soilTemperatureTN03("08");
                         break;
                         
                     case "september":
-                        soilTemperatureTN03September();
+                        soilTemperatureTN03("09");
                         break;
                     
                     case "october":
-                        soilWaterTN03October();
+                        soilWaterTN03("10");
                         break;
                         
                     case "november":
-                        soilTemperatureTN03November();
+                        soilTemperatureTN03("11");
                         break;
                         
                     case "december":
-                        soilTemperatureN03December();
+                        soilTemperatureN03("12");
                         break;
                 }
                 break;
@@ -4014,27 +2507,27 @@ function buildSoilGraph() {
             case "4":
                 switch(month){
                     case "july":
-                        soilTemperatureTN04July();
+                        soilTemperatureTN04("07");
                         break;
                     
                     case "august":
-                        soilTemperatureTN04August();
+                        soilTemperatureTN04("08");
                         break;
                         
                     case "september":
-                        soilTemperatureTN04September();
+                        soilTemperatureTN04("09");
                         break;
                     
                     case "october":
-                        soilTemperatureTN04October();
+                        soilTemperatureTN04("10");
                         break;
                         
                     case "november":
-                        soilTemperatureTN04November();
+                        soilTemperatureTN04("11");
                         break;
                         
                     case "december":
-                        soilTemperatureTN04December();
+                        soilTemperatureTN04("12");
                         break;
                 }
                 break;
@@ -4042,27 +2535,27 @@ function buildSoilGraph() {
             case "5":
                 switch(month){
                     case "july":
-                        soilTemperatureTN05July();
+                        soilTemperatureTN05("07");
                         break;
                     
                     case "august":
-                        soilTemperatureTN05August();
+                        soilTemperatureTN05("08");
                         break;
                         
                     case "september":
-                        soilTemperatureTN05September();
+                        soilTemperatureTN05("09");
                         break;
                     
                     case "october":
-                        soilTemperatureTN05October();
+                        soilTemperatureTN05("10");
                         break;
                         
                     case "november":
-                        soilTemperatureTN05November();
+                        soilTemperatureTN05("11");
                         break;
                         
                     case "december":
-                        soilTemperatureTN05December();
+                        soilTemperatureTN05("12");
                         break;
                 }
                 break;
@@ -4070,27 +2563,27 @@ function buildSoilGraph() {
             case "6":
                 switch(month){
                     case "july":
-                        soilTemperatureTN06July();
+                        soilTemperatureTN06("07");
                         break;
                     
                     case "august":
-                        soilTemperatureTN06August();
+                        soilTemperatureT06("08");
                         break;
                         
                     case "september":
-                        soilTemperatureTN06September();
+                        soilTemperatureTN06("09");
                         break;
                     
                     case "october":
-                        soilTemperatureTN06October();
+                        soilTemperatureTN06("10");
                         break;
                         
                     case "november":
-                        soilTemperatureTN06November();
+                        soilTemperatureTN06("11");
                         break;
                         
                     case "december":
-                        soilTemperatureTN06December();
+                        soilTemperatureTN06("12");
                         break;
                 }
                 break;
@@ -4098,27 +2591,27 @@ function buildSoilGraph() {
             case "7":
                 switch(month){
                     case "july":
-                        soilTemperatureTN07July();
+                        soilTemperatureTN07("07");
                         break;
                     
                     case "august":
-                        soilTemperatureTN07August();
+                        soilTemperatureTN07("08");
                         break;
                         
                     case "september":
-                        soilTemperatureTN07September();
+                        soilTemperatureTN07("09");
                         break;
                     
                     case "october":
-                        soilTemperatureTN07October();
+                        soilTemperatureTN07("10");
                         break;
                         
                     case "november":
-                        soilTemperatureTN07November();
+                        soilTemperatureTN07("11");
                         break;
                         
                     case "december":
-                        soilTemperatureTN07December();
+                        soilTemperatureTN07("12");
                         break;
                 }
                 break;
@@ -4126,27 +2619,27 @@ function buildSoilGraph() {
             case "8":
                 switch(month){
                     case "july":
-                        soilTemperatureTN08July();
+                        soilTemperatureTN08("07");
                         break;
                     
                     case "august":
-                        soilTemperatureTN08August();
+                        soilTemperatureTN08("08");
                         break;
                         
                     case "september":
-                        soilTemperatureTN08September();
+                        soilTemperatureTN08("09");
                         break;
                     
                     case "october":
-                        soilTemperatureTN08October();
+                        soilTemperatureTN08("10");
                         break;
                         
                     case "november":
-                        soilTemperatureTN08November();
+                        soilTemperatureTN08("11");
                         break;
                         
                     case "december":
-                        soilTemperatureTN08December();
+                        soilTemperatureTN08("12");
                         break;
                 }
                 break;
@@ -4154,27 +2647,27 @@ function buildSoilGraph() {
             case "9":
                 switch(month){
                     case "july":
-                        soilTemperatureTN09July();
+                        soilTemperatureTN09("07");
                         break;
                     
                     case "august":
-                        soilTemperatureTN09August();
+                        soilTemperatureTN09("08");
                         break;
                         
                     case "september":
-                        soilTemperatureTN09September();
+                        soilTemperatureTN09("09");
                         break;
                     
                     case "october":
-                        soilTemperatureTN09October();
+                        soilTemperatureTN09("10");
                         break;
                         
                     case "november":
-                        soilTemperatureTN09November();
+                        soilTemperatureTN09("11");
                         break;
                         
                     case "december":
-                        soilTemperatureTN09December();
+                        soilTemperatureTN09("12");
                         break;
                 }
                 break;

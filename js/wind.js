@@ -50,6 +50,20 @@ function windSpeedGraph(month) {
                     
         yAxis = svg.append("g")
         .call(d3.axisLeft(y));
+        
+        var key = ["Wind speed"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "mediumorchid")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
                    
         svg.append("text")
             .attr("text-anchor", "end")
@@ -153,6 +167,21 @@ function windDirGraph(month) {
             
         svg.append("g")
         .call(d3.axisLeft(y));
+        
+        var key = ["Wind direction"];
+            
+        svg.selectAll("mylabels")
+            .data(key)
+            .enter()
+            .append("text")
+            .attr("x", 420)
+            .attr("y", -40) 
+            .style("fill", "crimson")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-weight", "bold");
+                   
                     
         svg.append("text")
             .attr("text-anchor", "end")
