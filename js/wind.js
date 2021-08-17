@@ -76,7 +76,7 @@ function windSpeedGraph(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Wind speed average (Km//h)")
+            .text("Km//h")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -194,7 +194,7 @@ function windDirGraph(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Wind direction (degrees)")
+            .text("Degrees")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")

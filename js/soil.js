@@ -77,7 +77,7 @@ function soilWaterTN01(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil water (m3)")
+            .text("m3")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -191,7 +191,7 @@ function soilWaterTN02(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil water (m3)")
+            .text("m3")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -307,7 +307,7 @@ function soilWaterTN03(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil water (m3)")
+            .text("m3")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -421,7 +421,7 @@ function soilWaterTN04(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil water (m3)")
+            .text("m3")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -535,7 +535,7 @@ function soilWaterTN05(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil water (m3)")
+            .text("m3")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -649,7 +649,7 @@ function soilWaterTN06(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil water (m3)")
+            .text("m3")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -763,7 +763,7 @@ function soilWaterTN07(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil water (m3)")
+            .text("m3")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -877,7 +877,7 @@ function soilWaterTN08(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil water (m3)")
+            .text("m3")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -991,7 +991,7 @@ function soilWaterTN09(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil water (m3)")
+            .text("m3")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -1108,7 +1108,7 @@ function soilTemperatureTN01(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil temperature (°C)")
+            .text("°C")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -1223,7 +1223,7 @@ function soilTemperatureTN02(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil temperature (°C)")
+            .text("°C")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -1337,7 +1337,7 @@ function soilTemperatureTN03(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil temperature (°C)")
+            .text("°C")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -1451,7 +1451,7 @@ function soilTemperatureTN04July(mont) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil temperature (°C)")
+            .text("°C")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -1565,7 +1565,7 @@ function soilTemperatureTN05(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil temperature (°C)")
+            .text("°C")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -1679,7 +1679,7 @@ function soilTemperatureTN06(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil temperature (°C)")
+            .text("°C")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -1793,7 +1793,7 @@ function soilTemperatureTN07(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil temperature (°C)")
+            .text("°C")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -1907,7 +1907,7 @@ function soilTemperatureTN08(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil temperature (°C)")
+            .text("°C")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -2021,7 +2021,7 @@ function soilTemperatureTN09(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Soil temperature (°C)")
+            .text("°C")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")

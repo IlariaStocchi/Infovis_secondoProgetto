@@ -77,7 +77,7 @@ function solarGraph(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Solar Radiation (V)")
+            .text("V")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -192,7 +192,7 @@ function pressureGraph(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Pressure (bit)")
+            .text("bit")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
@@ -307,7 +307,7 @@ function rainGraph(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Rain (mm)")
+            .text("mm")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")

@@ -77,7 +77,7 @@ function humidityGraph(month) {
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -20)
-            .text("Humidity average (%)")
+            .text("%")
         
         const clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
