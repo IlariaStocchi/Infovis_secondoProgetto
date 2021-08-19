@@ -16,15 +16,6 @@ function removeSVG(){
 }
     
     
-function createSVG(){
-    var svg = d3.select("#my_dataviz")
-    .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
-    return svg;
-} 
 
 
 function solarGraph(month) {

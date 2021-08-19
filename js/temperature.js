@@ -6,26 +6,6 @@ var margin = {top: 200, right: 20, bottom: 20, left: 450},
     screenMargin1 = 770,
     screenMargin2 = 700;   //.method
     
-    
-function removeSVG(){
-    
-    var v1 = document.getElementsByTagName('svg');
-    if(v1.length >= 0 ){
-        d3.select("svg").remove();
-    }
-}
-    
-    
-function createSVG(){
-    var svg = d3.select("#my_dataviz")
-    .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
-    return svg;
-} 
-    
 function temperatureGraph(month) {
         
     var svg = createSVG();

@@ -5,19 +5,40 @@ var margin = {top: 200, right: 20, bottom: 20, left: 40}, //200, 20, 20, 40
     screenHeight = 900,
     screenMargin1 = 770,
     screenMargin2 = 700;   //.method
-    
-    
-function removeSVG(){
-    
-    var v1 = document.getElementsByTagName('svg');
-    if(v1.length >= 0 ){
-        d3.select("svg").remove();
+ 
+
+function createSVG(){
+    var first_graph = document.getElementById("first_line_graph");   
+    var second_graph = document.getElementById("second_line_graph"); 
+    var svg;
+    if(first_graph.hasChildNodes() && second_graph.hasChildNodes()){
+        // remove all SVG
+        var v1 = document.getElementsByTagName('svg');
+        if(v1.length > 0 ){
+            d3.selectAll('svg').remove();
+        }
     }
+    if(first_graph.hasChildNodes()){
+        svg = createSecondSVG();
+    }
+    else{
+        svg = createFirstSVG();
+    }
+    return svg;
 }
     
-    
-function createSVG(){
-    var svg = d3.select("#my_dataviz")
+function createFirstSVG(){
+    var svg = d3.select("#first_line_graph")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+    return svg;
+} 
+
+function createSecondSVG(){
+    var svg = d3.select("#second_line_graph")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -27,7 +48,6 @@ function createSVG(){
 } 
     
 function humidityGraph(month) {
-        
     var svg = createSVG();
     var path = "data/CSV/";
     var month = month.concat("/2020-").concat(month);
