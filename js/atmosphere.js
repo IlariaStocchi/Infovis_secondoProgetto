@@ -37,19 +37,19 @@ function solarGraph(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Solar radiation"];
@@ -79,7 +79,7 @@ function solarGraph(month) {
             .attr("x", -20)
             .text("V")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -87,11 +87,11 @@ function solarGraph(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -152,19 +152,19 @@ function pressureGraph(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Air pressure"];
@@ -194,7 +194,7 @@ function pressureGraph(month) {
             .attr("x", -20)
             .text("bit")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -202,11 +202,11 @@ function pressureGraph(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -267,19 +267,19 @@ function rainGraph(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Rain"];
@@ -309,7 +309,7 @@ function rainGraph(month) {
             .attr("x", -20)
             .text("mm")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -317,11 +317,11 @@ function rainGraph(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")

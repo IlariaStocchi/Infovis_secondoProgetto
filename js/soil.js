@@ -37,19 +37,19 @@ function soilWaterTN01(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Water Area 1"];
@@ -79,7 +79,7 @@ function soilWaterTN01(month) {
             .attr("x", -20)
             .text("m3")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -87,11 +87,11 @@ function soilWaterTN01(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -151,19 +151,19 @@ function soilWaterTN02(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Water Area 2"];
@@ -193,7 +193,7 @@ function soilWaterTN02(month) {
             .attr("x", -20)
             .text("m3")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -201,11 +201,11 @@ function soilWaterTN02(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -267,19 +267,19 @@ function soilWaterTN03(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Water Area 3"];
@@ -309,7 +309,7 @@ function soilWaterTN03(month) {
             .attr("x", -20)
             .text("m3")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -317,11 +317,11 @@ function soilWaterTN03(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -381,19 +381,19 @@ function soilWaterTN04(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Water Area 4"];
@@ -423,7 +423,7 @@ function soilWaterTN04(month) {
             .attr("x", -20)
             .text("m3")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -431,11 +431,11 @@ function soilWaterTN04(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -495,19 +495,19 @@ function soilWaterTN05(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Water Area 5"];
@@ -537,7 +537,7 @@ function soilWaterTN05(month) {
             .attr("x", -20)
             .text("m3")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -545,11 +545,11 @@ function soilWaterTN05(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -609,19 +609,19 @@ function soilWaterTN06(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Water Area 6"];
@@ -651,7 +651,7 @@ function soilWaterTN06(month) {
             .attr("x", -20)
             .text("m3")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -659,11 +659,11 @@ function soilWaterTN06(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -723,19 +723,19 @@ function soilWaterTN07(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Water Area 7"];
@@ -765,7 +765,7 @@ function soilWaterTN07(month) {
             .attr("x", -20)
             .text("m3")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -773,11 +773,11 @@ function soilWaterTN07(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -837,19 +837,19 @@ function soilWaterTN08(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Water Area 8"];
@@ -879,7 +879,7 @@ function soilWaterTN08(month) {
             .attr("x", -20)
             .text("m3")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -887,11 +887,11 @@ function soilWaterTN08(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -951,19 +951,19 @@ function soilWaterTN09(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Water Area 9"];
@@ -993,7 +993,7 @@ function soilWaterTN09(month) {
             .attr("x", -20)
             .text("m3")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -1001,11 +1001,11 @@ function soilWaterTN09(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -1067,19 +1067,19 @@ function soilTemperatureTN01(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Temperature Area 1"];
@@ -1110,7 +1110,7 @@ function soilTemperatureTN01(month) {
             .attr("x", -20)
             .text("°C")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -1118,11 +1118,11 @@ function soilTemperatureTN01(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -1182,19 +1182,19 @@ function soilTemperatureTN02(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Temperature Area 2"];
@@ -1225,7 +1225,7 @@ function soilTemperatureTN02(month) {
             .attr("x", -20)
             .text("°C")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -1233,11 +1233,11 @@ function soilTemperatureTN02(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -1297,19 +1297,19 @@ function soilTemperatureTN03(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Temperature Area 3"];
@@ -1339,7 +1339,7 @@ function soilTemperatureTN03(month) {
             .attr("x", -20)
             .text("°C")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -1347,11 +1347,11 @@ function soilTemperatureTN03(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -1411,19 +1411,19 @@ function soilTemperatureTN04July(mont) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Temperature Area 4"];
@@ -1453,7 +1453,7 @@ function soilTemperatureTN04July(mont) {
             .attr("x", -20)
             .text("°C")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -1461,11 +1461,11 @@ function soilTemperatureTN04July(mont) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -1525,19 +1525,19 @@ function soilTemperatureTN05(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Temperature Area 5"];
@@ -1567,7 +1567,7 @@ function soilTemperatureTN05(month) {
             .attr("x", -20)
             .text("°C")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -1575,11 +1575,11 @@ function soilTemperatureTN05(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -1639,19 +1639,19 @@ function soilTemperatureTN06(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Temperature Area 6"];
@@ -1681,7 +1681,7 @@ function soilTemperatureTN06(month) {
             .attr("x", -20)
             .text("°C")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -1689,11 +1689,11 @@ function soilTemperatureTN06(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -1753,19 +1753,19 @@ function soilTemperatureTN07(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Temperature Area 7"];
@@ -1795,7 +1795,7 @@ function soilTemperatureTN07(month) {
             .attr("x", -20)
             .text("°C")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -1803,11 +1803,11 @@ function soilTemperatureTN07(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -1867,19 +1867,19 @@ function soilTemperatureTN08(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Temperature Area 8"];
@@ -1909,7 +1909,7 @@ function soilTemperatureTN08(month) {
             .attr("x", -20)
             .text("°C")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -1917,11 +1917,11 @@ function soilTemperatureTN08(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
@@ -1981,19 +1981,19 @@ function soilTemperatureTN09(month) {
                 
     d3.csv(file, function(d){ return { date : d3.timeParse("%Y-%m-%dT%H:%M:%S.%LZ")(d.created), value : d.value }})
     .then(function(data) {
-        const x = d3.scaleTime()
+        var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.date; }))
         .range([ 0, width ]);
                     
-        xAxis = svg.append("g")
+        var xAxis = svg.append("g")
         .attr("transform", `translate(0, 200)`)
         .call(d3.axisBottom(x));
                     
-        const y = d3.scaleLinear()
+        var y = d3.scaleLinear()
         .domain([0, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
-        yAxis = svg.append("g")
+        var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
         
         var key = ["Soil Temperature Area 9"];
@@ -2023,7 +2023,7 @@ function soilTemperatureTN09(month) {
             .attr("x", -20)
             .text("°C")
         
-        const clip = svg.append("defs").append("svg:clipPath")
+        var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
             .append("svg:rect")
             .attr("width", width)   
@@ -2031,11 +2031,11 @@ function soilTemperatureTN09(month) {
             .attr("x", 0)
             .attr("y", 0);
         
-        const brush = d3.brushX() 
+        var brush = d3.brushX() 
             .extent([[0,0], [width, height]])  
             .on("end", updateChart)
         
-        const line = svg.append("g")
+        var line = svg.append("g")
             .attr("clip-path", "url(#clip)")
             
         line.append("path")
