@@ -2123,6 +2123,11 @@ function getArea() {
             break;
         
         case "f7":
+            var area = "7";
+            return area;
+            break;
+            
+        case "f8":
             var area = "8";
             return area;
             break;
