@@ -21,11 +21,11 @@ function temperatureGraph(month) {
         .range([ 0, width ]);
                     
         var xAxis = svg.append("g")
-        .attr("transform", `translate(0, 200)`)
+        .attr("transform", `translate(0,200)`)   
         .call(d3.axisBottom(x));
                     
         var y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.value; })])
+        .domain([-5, d3.max(data, function(d) { return +d.value; })])
         .range([ (screenHeight - screenMargin2), 0 ]);
                     
         var yAxis = svg.append("g")
