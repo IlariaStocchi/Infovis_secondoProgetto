@@ -84,7 +84,7 @@ function buildGraph(sensorOption, month, fieldNumber) {
             var sensor = "-wind-speed-average.csv";
             var key = ["Wind speed"];
             var color = "mediumorchid";
-            var unitMeasure = "Km//h";
+            var unitMeasure = "Km/h";
             break;
         
         case "windDir":
