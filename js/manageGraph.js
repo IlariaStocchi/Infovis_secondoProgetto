@@ -1,6 +1,6 @@
 var margin = {top: 200, right: 20, bottom: 20, left: 450}, 
-    width = 1100,  //1100
-    height = 200,  //200
+    width = 1100,  
+    height = 200,
     screenWidth = 1800,
     screenHeight = 900,
     screenMargin1 = 770,
