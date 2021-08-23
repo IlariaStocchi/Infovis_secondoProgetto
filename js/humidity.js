@@ -187,7 +187,7 @@ function buildHumidityGraph() {
             humidityGraph("11");
             break;
         
-        case "november":
+        case "december":
             humidityGraph("12");
             break;
     }
